@@ -1,12 +1,18 @@
-/* 基本設定 */
+/* ─────────────────────────────
+   基本設定
+───────────────────────────── */
+*{box-sizing:border-box;}
 body{
   margin:0;padding:0;
   font-family:'Patrick Hand','Hiragino Kaku Gothic ProN',sans-serif;
-  background:#FFFBE7;line-height:1.6;
+  background:#FFFBE7;
+  line-height:1.6;
 }
 h1,h2,legend{margin:0}
 
-/* ── HERO ── */
+/* ─────────────────────────────
+   HERO  (タイトル上・ボタン下)
+───────────────────────────── */
 .hero{
   position:relative;
   width:100%;height:100vh;
@@ -14,57 +20,109 @@ h1,h2,legend{margin:0}
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:flex-start;   /* 上寄せ */
-  padding-top:8vh;              /* タイトル位置 */
+  justify-content:flex-start;
+  padding-top:10vh;              /* タイトルを画面上 10 % に */
 }
+
+/* タイトル：白文字＋極太アウトライン＋軽いぼかし */
 .hero-title{
-  color:#FFF9E6;
-  text-shadow:0 3px 6px rgba(0,0,0,.6);
-  font-size:12vw;               /* 大きめタイトル */
+  font-size:12vw;                /* モバイル時は画面幅基準 */
+  color:#fff;
+  text-shadow:
+    -3px -3px 0 #000,  3px -3px 0 #000,
+    -3px  3px 0 #000,  3px  3px 0 #000,
+     0px   0px 6px rgba(0,0,0,.6);
 }
+
+/* スタートボタン：下寄せ配置 */
 .hero-btn{
-  margin-top:auto;              /* 余白を自動で取り最下部へ */
-  margin-bottom:8vh;            /* 画面下とボタンの間隔 */
-  background:#F6B42C;border:none;color:#fff;
-  padding:1rem 3rem;
+  margin-top:auto;               /* 余白を押し上げてボタンを下側へ */
+  margin-bottom:8vh;             /* 画面下との距離 */
+  background:#F6B42C;
+  border:none;color:#fff;
   font-size:6vw;
+  padding:1rem 3rem;
   border-radius:14px;
   cursor:pointer;
-  box-shadow:0 5px 12px rgba(0,0,0,.25);
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
 }
+
+/* ───── タブレット／PC でサイズ固定 ───── */
 @media(min-width:600px){
   .hero-title{font-size:64px}
-  .hero-btn{font-size:28px;padding:1rem 3rem;width:auto}
+  .hero-btn  {font-size:28px;padding:1rem 3rem}
 }
 
-/* ── QUIZ ── */
+/* ─────────────────────────────
+   QUIZ フォーム
+───────────────────────────── */
 fieldset{
-  border:2px dashed #555;padding:1rem;
+  border:2px dashed #555;
+  padding:1rem;
   margin:1rem auto;
-  max-width:600px;background:#fff;
+  max-width:600px;
+  background:#fff;
 }
-legend{font-weight:bold;font-size:1.1rem}
-#quiz,#result{padding:2rem 1rem}
+legend{
+  font-weight:bold;
+  font-size:1.1rem;
+}
+#quiz,#result{
+  padding:2rem 1rem;
+}
 
-/* ── RESULT ── */
+/* ─────────────────────────────
+   結果カード
+───────────────────────────── */
 .card{
-  max-width:600px;margin:0 auto;background:#fff;
-  border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);
+  max-width:600px;
+  margin:0 auto;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,.15);
   overflow:hidden;
 }
-.card img{width:100%;display:block}
-.card-content{padding:1.5rem;text-align:center}
-.catch-main{font-size:1.4rem;font-weight:bold;margin:.2em 0}
-.catch-sub{font-size:1rem;color:#555;margin-bottom:1rem}
-.lucky{font-size:1.1rem;margin:.4em 0}
+.card img{
+  width:100%;
+  display:block;
+}
+.card-content{
+  padding:1.5rem;
+  text-align:center;
+}
+.catch-main{
+  font-size:1.4rem;
+  font-weight:bold;
+  margin:.2em 0;
+}
+.catch-sub{
+  font-size:1rem;
+  color:#555;
+  margin-bottom:1rem;
+}
+.lucky{
+  font-size:1.1rem;
+  margin:.4em 0;
+}
 .label{
-  display:inline-block;background:#F6B42C;color:#fff;
-  border-radius:6px;padding:.2em .6em;margin-right:.4em;
+  display:inline-block;
+  background:#F6B42C;
+  color:#fff;
+  border-radius:6px;
+  padding:.2em .6em;
+  margin-right:.4em;
 }
 
-/* ボタン共通 */
+/* ─────────────────────────────
+   共通ボタン
+───────────────────────────── */
 .main-btn{
-  background:#F6B42C;border:none;color:#fff;
-  padding:.8rem 1.8rem;font-size:1rem;border-radius:10px;
-  cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.25);
+  background:#F6B42C;
+  border:none;
+  color:#fff;
+  padding:.8rem 1.8rem;
+  font-size:1rem;
+  border-radius:10px;
+  cursor:pointer;
+  box-shadow:0 3px 8px rgba(0,0,0,.25);
 }
