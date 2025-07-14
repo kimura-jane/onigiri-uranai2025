@@ -1,26 +1,50 @@
-
 body{
-  margin:0;padding:0;font-family:'Patrick Hand','Hiragino Kaku Gothic ProN',sans-serif;
+  margin:0;padding:0;
+  font-family:'Patrick Hand','Hiragino Kaku Gothic ProN',sans-serif;
   background:#FFFBE7;line-height:1.6;
 }
-h1,h2,legend{margin:0;}
+h1,h2,legend{margin:0}
+
+/* ─── HERO ─── */
 .hero{
-  position:relative;width:100%;height:100vh;background:url('images/hero.jpg') center/cover no-repeat;
+  position:relative;width:100%;height:100vh;
+  background:url('hero.jpg') center/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
 }
-.overlay{text-align:center;color:#FFF9E6;text-shadow:0 2px 4px rgba(0,0,0,.6);}
-.overlay h1{font-size:10vw;}
-.overlay h2{font-size:4vw;}
-.main-btn, #startBtn{
-  background:#F6B42C;border:none;color:#fff;padding:.8rem 1.8rem;font-size:1rem;border-radius:10px;cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.25);
+.overlay{
+  text-align:center;color:#FFF9E6;
+  text-shadow:0 2px 4px rgba(0,0,0,.6);
 }
-fieldset{border:2px dashed #555;padding:1rem;margin:1rem auto;max-width:600px;background:#fff;}
-legend{font-weight:bold;font-size:1.1rem;}
-#quiz, #result{padding:2rem 1rem;}
-.card{max-width:600px;margin:0 auto;background:#ffffff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);overflow:hidden;}
-.card img{width:100%;display:block;}
-.card-content{padding:1.5rem;text-align:center;}
-.catch-main{font-size:1.4rem;font-weight:bold;margin:.2em 0;}
-.catch-sub{font-size:1rem;color:#555;margin-bottom:1rem;}
-.lucky{font-size:1.1rem;margin:.4em 0;}
-.label{display:inline-block;background:#F6B42C;color:#fff;border-radius:6px;padding:.2em .6em;margin-right:.4em;}
+.overlay h1{font-size:10vw}
+.overlay h2{font-size:4vw}
+
+.main-btn,#startBtn{
+  background:#F6B42C;border:none;color:#fff;
+  padding:.8rem 1.8rem;font-size:1rem;border-radius:10px;
+  cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.25);
+}
+
+/* ─── QUIZ ─── */
+fieldset{
+  border:2px dashed #555;padding:1rem;
+  margin:1rem auto;
+  max-width:600px;background:#fff;
+}
+legend{font-weight:bold;font-size:1.1rem}
+#quiz,#result{padding:2rem 1rem}
+
+/* ─── RESULT ─── */
+.card{
+  max-width:600px;margin:0 auto;background:#fff;
+  border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);
+  overflow:hidden;
+}
+.card img{width:100%;display:block}
+.card-content{padding:1.5rem;text-align:center}
+.catch-main{font-size:1.4rem;font-weight:bold;margin:.2em 0}
+.catch-sub{font-size:1rem;color:#555;margin-bottom:1rem}
+.lucky{font-size:1.1rem;margin:.4em 0}
+.label{
+  display:inline-block;background:#F6B42C;color:#fff;
+  border-radius:6px;padding:.2em .6em;margin-right:.4em;
+}
