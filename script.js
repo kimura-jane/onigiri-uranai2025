@@ -1,5 +1,4 @@
-
-/* Result definitions */
+/* ========= データ定義 ========= */
 const types = {
   'AAA': {slug:'ume_kinpira',title:'梅きんぴらごぼう',catchMain:'情熱スパーク',catchSub:'― 瞬間を燃やし、行動で道を切り拓く ―'},
   'AAB': {slug:'komatsuna_salmon_cheese',title:'小松菜と炙り鮭チーズ',catchMain:'調和のコンダクター',catchSub:'― みんなの気持ちを絶妙にまとめる潤滑油 ―'},
@@ -11,7 +10,6 @@ const types = {
   'default': {slug:'double_konbu',title:'ダブル昆布',catchMain:'海の包容力',catchSub:'― 静かに支え、周囲をまろやかに包み込む ―'}
 };
 
-/* Lucky pools */
 const luckyColors = [
   {name:'桜ピンク',code:'#F78DA7'},{name:'桃ローズ',code:'#E94A77'},{name:'夕焼けオレンジ',code:'#FF8C42'},
   {name:'金木犀オレンジ',code:'#FFB02E'},{name:'檸檬イエロー',code:'#FFD447'},{name:'ひまわりイエロー',code:'#FFEB46'},
@@ -29,36 +27,50 @@ const luckyItems = [
  'カリンバ','ミニ観葉植物','トラベルミニキャンドル','パズルキーホルダー','ウッドコースター','ロケット型お香立て'
 ];
 
-/* util */
-function pickRandom(arr){return arr[Math.floor(Math.random()*arr.length)];}
+/* ========= ユーティリティ ========= */
+const pick = arr => arr[Math.floor(Math.random()*arr.length)];
 
-/* Event wiring */
-document.getElementById('startBtn').addEventListener('click',()=>{document.getElementById('start').style.display='none';document.getElementById('quiz').style.display='block';});
-document.getElementById('fortuneForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  const q1=document.querySelector('input[name="q1"]:checked').value;
-  const q2=document.querySelector('input[name="q2"]:checked').value;
-  const q3=document.querySelector('input[name="q3"]:checked').value;
-  const key=q1+q2+q3;
-  let res=types[key]||types[key.slice(0,2)]||types['default'];
+/* ========= DOMキャッシュ ========= */
+const startBtn  = document.getElementById('startBtn');
+const againBtn  = document.getElementById('againBtn');
+const form      = document.getElementById('fortuneForm');
+const heroSec   = document.getElementById('start');
+const quizSec   = document.getElementById('quiz');
+const resultSec = document.getElementById('result');
 
-  const color=pickRandom(luckyColors);
-  const item=pickRandom(luckyItems);
-
-  document.getElementById('resultImg').src='images/'+res.slug+'.jpg';
-  document.getElementById('resultImg').alt=res.title;
-  document.getElementById('resultTitle').textContent=res.title;
-  document.getElementById('catchMain').textContent=res.catchMain;
-  document.getElementById('catchSub').textContent=res.catchSub;
-  document.getElementById('luckyColorName').textContent=color.name;
-  document.getElementById('luckyColorName').style.color=color.code;
-  document.getElementById('luckyItem').textContent=item;
-
-  document.getElementById('quiz').style.display='none';
-  document.getElementById('result').style.display='block';
+/* ========= イベント ========= */
+startBtn.addEventListener('click',()=>{
+  heroSec.style.display='none';
+  quizSec.style.display='block';
 });
-document.getElementById('againBtn').addEventListener('click',()=>{
-  document.getElementById('fortuneForm').reset();
-  document.getElementById('result').style.display='none';
-  document.getElementById('start').style.display='flex';
+
+againBtn.addEventListener('click',()=>{
+  form.reset();
+  resultSec.style.display='none';
+  heroSec.style.display='flex';
+});
+
+/* メイン判定 */
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const q1=form.q1.value,q2=form.q2.value,q3=form.q3.value;
+  const key=q1+q2+q3;
+  const res=types[key]||types[key.slice(0,2)]||types.default;
+
+  const color=pick(luckyColors);
+  const item =pick(luckyItems);
+
+  /* 画像パスはリポジトリ直下にある jpg へ */
+  document.getElementById('resultImg').src = res.slug+'.jpg';
+  document.getElementById('resultImg').alt = res.title;
+  document.getElementById('resultTitle').textContent = res.title;
+  document.getElementById('catchMain').textContent  = res.catchMain;
+  document.getElementById('catchMain').style.color  = color.code;
+  document.getElementById('catchSub').textContent   = res.catchSub;
+  document.getElementById('luckyColorName').textContent = color.name;
+  document.getElementById('luckyColorName').style.color = color.code;
+  document.getElementById('luckyItem').textContent  = item;
+
+  quizSec.style.display='none';
+  resultSec.style.display='block';
 });
