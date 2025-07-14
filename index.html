@@ -1,4 +1,24 @@
-<!-- QUIZ SECTION -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>かなたけ✖️木村のおにぎり占い</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section id="start" class="hero">
+  <div class="overlay">
+    <h2>かなたけ✖️木村の</h2>
+    <h1>おにぎり占い</h1>
+    <button id="startBtn">占いを始める ▶</button>
+  </div>
+</section>
+
+<!-- ── QUIZ ── -->
 <section id="quiz" style="display:none;">
   <form id="fortuneForm">
 
@@ -53,3 +73,23 @@
     <button type="submit" class="main-btn">診断する！</button>
   </form>
 </section>
+
+<!-- ── RESULT ── -->
+<section id="result" style="display:none;">
+  <div class="card">
+    <img id="resultImg" src="" alt="">
+    <div class="card-content">
+      <h2 id="resultTitle"></h2>
+      <div id="catchMain" class="catch-main"></div>
+      <div id="catchSub"  class="catch-sub"></div>
+      <div class="lucky"><span class="label">ラッキーカラー</span><span id="luckyColorName"></span></div>
+      <div class="lucky"><span class="label">ラッキーアイテム</span><span id="luckyItem"></span></div>
+      <button id="againBtn" class="main-btn">もう一度占う ▶</button>
+    </div>
+  </div>
+</section>
+
+<!-- **スクリプトは必ず body の一番下** -->
+<script src="script.js"></script>
+</body>
+</html>
