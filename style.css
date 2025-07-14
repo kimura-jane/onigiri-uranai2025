@@ -1,3 +1,4 @@
+/* 基本設定 */
 body{
   margin:0;padding:0;
   font-family:'Patrick Hand','Hiragino Kaku Gothic ProN',sans-serif;
@@ -5,26 +6,38 @@ body{
 }
 h1,h2,legend{margin:0}
 
-/* ─── HERO ─── */
+/* ── HERO ── */
 .hero{
-  position:relative;width:100%;height:100vh;
+  position:relative;
+  width:100%;height:100vh;
   background:url('hero.jpg') center/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;   /* 上寄せ */
+  padding-top:8vh;              /* タイトル位置 */
 }
-.overlay{
-  text-align:center;color:#FFF9E6;
-  text-shadow:0 2px 4px rgba(0,0,0,.6);
+.hero-title{
+  color:#FFF9E6;
+  text-shadow:0 3px 6px rgba(0,0,0,.6);
+  font-size:12vw;               /* 大きめタイトル */
 }
-.overlay h1{font-size:10vw}
-.overlay h2{font-size:4vw}
-
-.main-btn,#startBtn{
+.hero-btn{
+  margin-top:auto;              /* 余白を自動で取り最下部へ */
+  margin-bottom:8vh;            /* 画面下とボタンの間隔 */
   background:#F6B42C;border:none;color:#fff;
-  padding:.8rem 1.8rem;font-size:1rem;border-radius:10px;
-  cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.25);
+  padding:1rem 3rem;
+  font-size:6vw;
+  border-radius:14px;
+  cursor:pointer;
+  box-shadow:0 5px 12px rgba(0,0,0,.25);
+}
+@media(min-width:600px){
+  .hero-title{font-size:64px}
+  .hero-btn{font-size:28px;padding:1rem 3rem;width:auto}
 }
 
-/* ─── QUIZ ─── */
+/* ── QUIZ ── */
 fieldset{
   border:2px dashed #555;padding:1rem;
   margin:1rem auto;
@@ -33,7 +46,7 @@ fieldset{
 legend{font-weight:bold;font-size:1.1rem}
 #quiz,#result{padding:2rem 1rem}
 
-/* ─── RESULT ─── */
+/* ── RESULT ── */
 .card{
   max-width:600px;margin:0 auto;background:#fff;
   border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.15);
@@ -47,4 +60,11 @@ legend{font-weight:bold;font-size:1.1rem}
 .label{
   display:inline-block;background:#F6B42C;color:#fff;
   border-radius:6px;padding:.2em .6em;margin-right:.4em;
+}
+
+/* ボタン共通 */
+.main-btn{
+  background:#F6B42C;border:none;color:#fff;
+  padding:.8rem 1.8rem;font-size:1rem;border-radius:10px;
+  cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.25);
 }
