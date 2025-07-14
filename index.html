@@ -1,67 +1,55 @@
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>かなたけ✖️木村のおにぎり占い</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<!-- Hero / Start -->
-<section id="start" class="hero">
-  <div class="overlay">
-    <h2>かなたけ✖️木村の</h2>
-    <h1>おにぎり占い</h1>
-    <button id="startBtn">占いを始める ▶</button>
-  </div>
-</section>
-
-<!-- Quiz Section -->
+<!-- QUIZ SECTION -->
 <section id="quiz" style="display:none;">
   <form id="fortuneForm">
+
+    <!-- Q1 -->
     <fieldset>
       <legend>1. 今の気分は？</legend>
       <label><input type="radio" name="q1" value="A" required> ガッツリ食べたい</label><br>
-      <label><input type="radio" name="q1" value="B"> ほどほどに食事したい</label><br>
+      <label><input type="radio" name="q1" value="B"> もうお腹いっぱい</label><br>
       <label><input type="radio" name="q1" value="C"> 小腹を満たしたい</label>
     </fieldset>
 
+    <!-- Q2 -->
     <fieldset>
-      <legend>2. おにぎりと一緒に飲みたいものは？</legend>
-      <label><input type="radio" name="q2" value="A" required> コーヒー</label><br>
-      <label><input type="radio" name="q2" value="B"> お茶（緑茶・麦茶）</label><br>
-      <label><input type="radio" name="q2" value="C"> 炭酸ジュース</label>
+      <legend>2. おにぎりと一緒に飲みたいのは？</legend>
+      <label><input type="radio" name="q2" value="A" required> コーヒー・お茶</label><br>
+      <label><input type="radio" name="q2" value="B"> 水</label><br>
+      <label><input type="radio" name="q2" value="C"> 炭酸飲料</label>
     </fieldset>
 
+    <!-- Q3 -->
     <fieldset>
-      <legend>3. ノリと米の仕上がりは？</legend>
-      <label><input type="radio" name="q3" value="A" required> パリパリが好き</label><br>
-      <label><input type="radio" name="q3" value="B"> ふっくらが好き</label><br>
-      <label><input type="radio" name="q3" value="C"> しっとりが好き</label>
+      <legend>3. 海苔はどうする？</legend>
+      <label><input type="radio" name="q3" value="A" required> パリパリ派</label><br>
+      <label><input type="radio" name="q3" value="B"> しっとり派</label><br>
+      <label><input type="radio" name="q3" value="C"> なし派</label>
+    </fieldset>
+
+    <!-- Q4 -->
+    <fieldset>
+      <legend>4. お米の硬さの好みは？</legend>
+      <label><input type="radio" name="q4" value="A" required> かため</label><br>
+      <label><input type="radio" name="q4" value="B"> ふつう</label><br>
+      <label><input type="radio" name="q4" value="C"> やわらかめ</label>
+    </fieldset>
+
+    <!-- Q5 -->
+    <fieldset>
+      <legend>5. 具材は変わり種 OK？</legend>
+      <label><input type="radio" name="q5" value="A" required> もちろん</label><br>
+      <label><input type="radio" name="q5" value="B"> ほどほど</label><br>
+      <label><input type="radio" name="q5" value="C"> 伝統派が安心</label>
+    </fieldset>
+
+    <!-- Q6 -->
+    <fieldset>
+      <legend>6. 味付けの好みは？</legend>
+      <label><input type="radio" name="q6" value="A" required> 甘め</label><br>
+      <label><input type="radio" name="q6" value="B"> 塩気強め</label><br>
+      <label><input type="radio" name="q6" value="C"> ピリ辛</label>
     </fieldset>
 
     <button type="submit" class="main-btn">診断する！</button>
   </form>
 </section>
-
-<!-- Result Section -->
-<section id="result" style="display:none;">
-  <div class="card">
-    <img id="resultImg" src="" alt="">
-    <div class="card-content">
-      <h2 id="resultTitle"></h2>
-      <div id="catchMain" class="catch-main"></div>
-      <div id="catchSub" class="catch-sub"></div>
-      <div class="lucky"><span class="label">ラッキーカラー</span><span id="luckyColorName"></span></div>
-      <div class="lucky"><span class="label">ラッキーアイテム</span><span id="luckyItem"></span></div>
-      <button id="againBtn" class="main-btn">もう一度占う ▶</button>
-    </div>
-  </div>
-</section>
-
-<script src="script.js"></script>
-</body>
-</html>
